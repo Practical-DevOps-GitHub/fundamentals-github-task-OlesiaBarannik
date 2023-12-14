@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Send Discord Notification
-        uses: https://discord.com/api/webhooks/
+        uses: discord-actions/send-message@v1
         with:
           webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
           webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
