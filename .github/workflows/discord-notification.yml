@@ -2,9 +2,9 @@ name: Notify Discord on Push
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main, develop ]
+    branches: [main, develop]
   workflow_dispatch:
 
 jobs:
@@ -13,8 +13,8 @@ jobs:
 
     steps:
       - name: Send Discord Notification
-        uses: organization/repo/actions/directory@ref
+        uses: 8398a7/action-discord@v2
         with:
-          webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
-          webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
-          content: "A new push has been made to the repository"
+          args: deploy
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
