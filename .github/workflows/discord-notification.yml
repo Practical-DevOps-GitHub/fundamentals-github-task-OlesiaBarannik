@@ -1,9 +1,14 @@
-name: Your Workflow Name
+name: Send message to discord
 
 on:
   push:
-    branches: [ main ]
-  # Add other triggers as needed
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
 
 jobs:
   notify:
