@@ -1,5 +1,16 @@
-- name: Discord Webhook Action
-  uses: tsickert/discord-webhook@v5.3.0
-  with:
-    webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-    content: 'Your message'
+name: Your Workflow Name
+
+on:
+  push:
+    branches: [ main ]
+  # Add other triggers as needed
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Discord Webhook Action
+      uses: tsickert/discord-webhook@v5.3.0
+      with:
+        webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        content: 'Your message here'
