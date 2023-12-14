@@ -13,10 +13,8 @@ jobs:
 
     steps:
       - name: Send Discord Notification
-        uses: organization/repo/actions/directory@ref
+        uses: discord-actions/send-message@v1
         with:
           content: "A new push has been made to the repository"
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
-
-
