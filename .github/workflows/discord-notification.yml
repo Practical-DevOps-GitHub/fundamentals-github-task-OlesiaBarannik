@@ -1,9 +1,9 @@
-name: Notify Discord on PR creation
+name: Notify Discord on Push
 
 on:
-  pull_request:
-    types:
-      - opened
+  push:
+    branches:
+      - main  # Adjust the branch name as needed
 
 jobs:
   notify-discord:
@@ -15,4 +15,4 @@ jobs:
         with:
           webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
           webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
-          content: "A new pull request has been created by ${GITHUB_ACTOR}! ${GITHUB_EVENT_PULL_REQUEST_HTML_URL}"
+          content: "A new push has been made to the repository by ${GITHUB_ACTOR}! ${GITHUB_EVENT_COMPARE}"
