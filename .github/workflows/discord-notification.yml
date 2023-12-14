@@ -15,4 +15,4 @@ jobs:
         with:
           webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
           webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
-          content: "A new push has been made to the repository by ${GITHUB_ACTOR}! ${GITHUB_EVENT_COMPARE}"
+          content: "A new push has been made to the repository"
