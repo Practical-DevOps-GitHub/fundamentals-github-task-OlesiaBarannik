@@ -1,20 +1,5 @@
-name: Notify Discord on Push
-
-on:
-  push:
-    branches: [ main, develop ]
-  pull_request:
-    branches: [ main, develop ]
-  workflow_dispatch:
-
-jobs:
-  notify-discord:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Send Discord Notification
-        uses: discord-actions/send-message@v1
-        with:
-          content: "A new push has been made to the repository"
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+- name: Discord Webhook Action
+  uses: tsickert/discord-webhook@v5.3.0
+  with:
+    webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+    content: 'Your message'
