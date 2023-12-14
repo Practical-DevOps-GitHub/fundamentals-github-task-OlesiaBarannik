@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Send Discord Notification
-        uses: discord-actions/send-message@v1
+        uses: organization/repo/actions/directory@ref
         with:
           webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
           webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
